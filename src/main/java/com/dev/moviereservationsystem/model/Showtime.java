@@ -1,5 +1,6 @@
 package com.dev.moviereservationsystem.model;
 
+import com.dev.moviereservationsystem.roles.Reservation_Seat_Role;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -23,7 +24,9 @@ public class Showtime {
     private UUID id;
     private Movie movie;
     private LocalDateTime startTime;
+    private LocalDateTime finishTime;
     private Room room;
     private Double price;
     private List<Seat> availableSeats;
+    private Reservation_Seat_Role role;
 }
