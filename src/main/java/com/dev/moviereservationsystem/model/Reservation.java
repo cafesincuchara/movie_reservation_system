@@ -14,14 +14,13 @@ import java.util.UUID;
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "rooms")
-public class Room {
+@Table(name = "reservations")
+public class Reservation {
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
 
-    @OneToMany
-    private List<Showtime> showtimes;
-
+    @ManyToMany
+    private List<Seat> availableSeats;
 }

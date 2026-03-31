@@ -22,11 +22,14 @@ public class Showtime {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
+    @ManyToOne
     private Movie movie;
     private LocalDateTime startTime;
     private LocalDateTime finishTime;
+    @ManyToOne
     private Room room;
     private Double price;
+    @OneToMany
     private List<Seat> availableSeats;
     private Reservation_Seat_Role role;
 }

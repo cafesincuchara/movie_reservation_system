@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.List;
 import java.util.UUID;
 
 @Entity
@@ -24,7 +25,9 @@ public class Movie {
     private String description;
     private String urlPoster;
     private String genre;
-    private Showtime showtime;
+
+    @OneToMany(mappedBy = "movie", cascade = CascadeType.ALL)
+    private List<Showtime> showtimes;
 
 
 }

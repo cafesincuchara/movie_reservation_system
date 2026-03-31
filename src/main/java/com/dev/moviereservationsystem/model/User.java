@@ -24,7 +24,8 @@ public class User implements UserDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
-
+    @OneToMany
+    private List<Reservation> reservations;
     private Role role;
 
     @Override
